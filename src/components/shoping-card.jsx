@@ -1,8 +1,7 @@
 import React from 'react';
+import Handler from './handler';
 const ShopingCard = () => {
-    return ( 
-       <div>shoping card</div>
-     );
+  return <Handler localStorageName="SHOPINGCART" />
 }
  
 export default ShopingCard;

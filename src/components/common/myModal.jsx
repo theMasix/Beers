@@ -2,10 +2,17 @@ import React from 'react';
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import MyMedia from './myMedia';
+import { toast } from "react-toastify";
 const MyModal = ({ show, handleClose, data }) => {
   const handle=()=>{
     let storageData = localStorage.getItem('SHOPINGITEMS');
     let storageDataParse = storageData ? JSON.parse(storageData) : [];
+    if (!storageDataParse.includes(data.id)) {
+      storageDataParse.push(data.id);
+    }
+    localStorage.setItem('SHOPINGITEMS', JSON.stringify(storageDataParse));
+     toast.success("به سبد خرید اصافه شد");
+     handleClose();
   }
   return (
     <>

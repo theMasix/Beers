@@ -22,10 +22,10 @@ const NavBar = () => {
                             </NavLink>
                     </Nav.Link>
                         <NavLink className="nav-link" to="/home">
-                            <NavDropdown title="صفحه اصلی" id="collasible-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.1">همه</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2">مناسب با پیتزا</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">مناسب با استیک</NavDropdown.Item>
+                            <NavDropdown title="صفحه اصلی" id="collasible-nav-dropdown" style={{right:"0rem"}}>
+                                <NavDropdown.Item style={{textAlign:"right"}} href="#action/3.1">همه</NavDropdown.Item>
+                                <NavDropdown.Item style={{textAlign:"right"}} href="#action/3.2">مناسب با پیتزا</NavDropdown.Item>
+                                <NavDropdown.Item style={{textAlign:"right"}} href="#action/3.3">مناسب با استیک</NavDropdown.Item>
                             </NavDropdown>
                         </NavLink>                  
                 </Nav>

@@ -7,7 +7,7 @@ const MyCardGroup = ({ data }) => {
                 <div className="col mb-4">
                     <ShowModalCard
                         data={d}
-                      
+                        key={d.id}
                     />
                 </div>
             )}

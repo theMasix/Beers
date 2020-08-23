@@ -30,7 +30,7 @@ const Beer = ({ data, onClick }) => {
 
   const { name, tagline, image_url } = data;
   if(data) return (
-    <Card style={{ cursor: "pointer", maxWidth: '18rem', boxShadow: "rgba(0, 0, 0, 0.07) 2px 2px 2px 2px" }} className="text-center h-100">
+    <Card style={{ cursor: "pointer", maxWidth: '18rem', boxShadow: "rgba(0, 0, 0, 0.05) 2px 2px 2px 2px" }} className="text-center h-100">
       <Card.Header>
         <Star clicked={clicked} handleClick={handleStarSelect} />
       </Card.Header>

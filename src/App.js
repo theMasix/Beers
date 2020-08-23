@@ -3,9 +3,10 @@ import { ToastContainer } from 'react-toastify';
 import { Route, Redirect, Switch } from 'react-router-dom';
 import NavBar from './components/navBar';
 import './App.css';
-import ShopingCard from './shoping-card';
+import ShopingCard from './components/shoping-card';
 import Favorites from './components/favorites';
 import  Home from './components/home';
+import 'react-toastify/dist/ReactToastify.css';
 // import NotFounf from './components/not-found';
 
 class App extends Component {
