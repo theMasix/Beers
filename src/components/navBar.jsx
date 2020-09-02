@@ -11,13 +11,13 @@ const NavBar = () => {
                 <Nav className="ml-auto d-flex align-items-center">
                     <Nav.Link>
                         <NavLink className="nav-link" to="/shopingCard">
-                            <i className="fa fa-shopping-cart" aria-hidden="true"></i>
+                            <i className="fa fa-shopping-cart ml-1" aria-hidden="true"></i>
                         سبد خرید
                         </NavLink>
                     </Nav.Link>
                     <Nav.Link>
                         <NavLink className="nav-link" to="/favorites">
-                        <i className="fa fa-star-o" aria-hidden="true"></i>
+                        <i className="fa fa-star-o ml-1" aria-hidden="true"></i>
                             علاقه مندی ها
                             </NavLink>
                     </Nav.Link>

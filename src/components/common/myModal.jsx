@@ -1,29 +1,51 @@
 import React from 'react';
+import {getLocalStorage,setLocalStorage} from './handleLocalStorage'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
-import MyMedia from './myMedia';
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Image from 'react-bootstrap/Image'
 import { toast } from "react-toastify";
 const MyModal = ({ show, handleClose, data }) => {
-  const handle=()=>{
-    let storageData = localStorage.getItem('SHOPINGITEMS');
-    let storageDataParse = storageData ? JSON.parse(storageData) : [];
+
+  const { image_url, name, tagline, description, abv, srm } = data;
+
+  const onShopingBasketButtonClick = () => {
+     let storageDataParse=getLocalStorage('SHOPINGITEMS');
     if (!storageDataParse.includes(data.id)) {
       storageDataParse.push(data.id);
     }
-    localStorage.setItem('SHOPINGITEMS', JSON.stringify(storageDataParse));
-     toast.success("به سبد خرید اصافه شد");
-     handleClose();
+      setLocalStorage('SHOPINGITEMS',storageDataParse);
+    toast.success(`به سبد خرید اصافه شد:${data.name}`);
+    handleClose();
   }
+
   return (
     <>
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} centered>
         <Modal.Header closeButton></Modal.Header>
         <Modal.Body>
-          <MyMedia data={data} />
-          <Button variant="dark" size="sm" className="float-left" onClick={handle}>
-            <i className="fa fa-shopping-cart" aria-hidden="true"></i>
+          <Container>
+            <Row>
+              <Col md={4}>
+                <Image src={image_url} fluid style={{ maxWidth: "8rem", maxHeight: "18rem" }} />
+              </Col>
+              <Col md={8} style={{ textAlign: "right" }}>
+                <h5>{name}</h5>
+                <h6 className="text-muted">{tagline}</h6>
+                <p>{description}</p>
+                <ul style={{listStyle:"none",paddingRight:"0px"}}>
+                  <li>درصد تلخی{abv}</li>
+                  <li>قیمت{srm}</li>
+                </ul>
+                <Button variant="dark" size="sm" className="float-left" onClick={onShopingBasketButtonClick}>
+                  <i className="fa fa-shopping-cart" aria-hidden="true"></i>
                      سبد خرید
-           </Button>
+                </Button>
+              </Col>
+            </Row>
+          </Container>
         </Modal.Body>
       </Modal>
     </>

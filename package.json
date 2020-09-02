@@ -1,7 +1,7 @@
 {
   "name": "beers",
   "version": "0.1.0",
-  "homepage":"https://nahid-67.github.io/Beers",
+  "homepage": "https://nahid-67.github.io/Beers",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.14.0",
@@ -20,15 +20,16 @@
     "react-expand-collapse": "^0.2.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "3.4.3",
-    "react-toastify": "^4.1.0"
+    "react-toastify": "^4.1.0",
+    "styled-components": "^5.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d build"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
