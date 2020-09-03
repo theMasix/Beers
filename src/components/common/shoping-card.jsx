@@ -5,7 +5,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Button from 'react-bootstrap/Button'
 import Badge from 'react-bootstrap/Badge'
 const ShopingCard = ({ data, onIncerement, onDecrement,count }) => {
- const [count]=useState(1);
+
     const { image_url, name, tagline } = data;
     return (
         <Card style={{ cursor: "pointer", maxWidth: '18rem', boxShadow: "rgba(0, 0, 0, 0.05) 4px 4px 4px 4px" }} className="text-center h-100">
