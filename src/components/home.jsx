@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { getbeers } from './../serveces/movieService';
 import MyCardGroup from './common/cardGroup';
-import _ from 'lodash'
+// import _ from 'lodash'
 class Home extends Component {
     state = {
         beers: [],

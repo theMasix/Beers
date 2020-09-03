@@ -1,5 +1,5 @@
 import React from "react";
-const Star = ({ clicked, onStarClick, isStarActive }) => {
+const Star = ({  onStarClick, isStarActive }) => {
   return (
     <i
       className={`float-right fa-2x fa fa-star${isStarActive ? "" : "-o"}`}

@@ -1,20 +1,11 @@
 import React, { useState } from 'react';
 import Card from 'react-bootstrap/Card'
 import Image from 'react-bootstrap/Image'
-import Star from './star'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Button from 'react-bootstrap/Button'
 import Badge from 'react-bootstrap/Badge'
-const ShopingCard = ({ data }) => {
-    const [count, setCount] = useState(1);
-    const onIncreament = () => {
-        setCount(count + 1);
-    }
-    const onDecreament = () => {
-        setCount(count - 1);
-    }
-   
- 
+const ShopingCard = ({ data, onIncerement, onDecrement,count }) => {
+ const [count]=useState(1);
     const { image_url, name, tagline } = data;
     return (
         <Card style={{ cursor: "pointer", maxWidth: '18rem', boxShadow: "rgba(0, 0, 0, 0.05) 4px 4px 4px 4px" }} className="text-center h-100">
@@ -27,14 +18,14 @@ const ShopingCard = ({ data }) => {
             </Card.Body>
             <Card.Footer>
                 <ButtonGroup aria-label="Basic example" style={{ direction: "ltr", float: "left" }}>
-                    <Button variant="success" onClick={onIncreament}>+</Button>
-                    <Button variant="danger" disabled={count===0} onClick={onDecreament}>-</Button>
+                    <Button variant="success" onClick={onIncerement}>+</Button>
+                    <Button variant="danger" disabled={count.value === 0} onClick={onDecrement}>-</Button>
                     <Button variant="info" style={{ cursor: "default" }}>
-                        تعداد <Badge variant="light">{count}</Badge>
+                        تعداد <Badge variant="light">{count.value}</Badge>
                         <span className="sr-only">unread messages</span>
                     </Button>
                     <Button variant="info" style={{ cursor: "default" }}>
-                        قیمت <Badge variant="light">{count * data.srm}</Badge>
+                        قیمت <Badge variant="light">{count.value * data.srm}</Badge>
                         <span className="sr-only">unread messages</span>
                     </Button>
                 </ButtonGroup>

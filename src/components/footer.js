@@ -1,5 +1,5 @@
 import React from 'react';
-import srtyled from 'styled-components';
+// import srtyled from 'styled-components';
 const Footer = () => {
     return (
         <div className="main-footer">

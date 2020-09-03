@@ -7,7 +7,7 @@ const Favorites = () => {
   useEffect(() => {
     (async () => {
       const { data } = await getbeers();
-      let localStorageData=getLocalStorage('BEER');
+      let localStorageData=getLocalStorage('starList');
       if (localStorageData) {
         for (let d of data) {
           if (localStorageData.includes(d.id)) {
