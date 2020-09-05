@@ -14,39 +14,41 @@ const ShopingCart = () => {
       if (localStorageData) {
         for (let d of data) {
           if (localStorageData.includes(d.id)) {
-            arr.push([...shopingItems, d]);
+            arr.push(d);
           }
         }
         setShopingItems(arr);
-        setItemCount(arr.map(itm => ({ id: itm[0].id, value: 1 })));
+        setItemCount(arr.map(itm => ({ id: itm.id, value: 1 })));
       }
+    
     })();
    
-  },);
-
+    
+  });
   const onIncrement = (item) => {
-    const itemCount = itemCount;
-    const index = itemCount.indexOf(item);
-    itemCount[index].value++;
-    setItemCount(itemCount);
+    const count = itemCount;
+    const index = count.indexOf(item);
+    count[index].value++;
+    setItemCount(count);
   }
   const onDecrement = (item) => {
-    const itemCount = itemCount;
-    const index = itemCount.indexOf(item);
-    itemCount[index].value--;
-    setItemCount(itemCount);
+    const count = itemCount;
+    const index = count.indexOf(item);
+    count[index].value--;
+    setItemCount(count);
   }
   
   if (shopingItems.length === 0) return <p className="lead text-center">تا کنون کالایی برای خرید انتخاب نکرده ایید</p>;
   return (
     <div className="row row-cols-2 row-cols-md-4">
       {shopingItems.map(item =>
+      const count=itemCount.find(itm => itm.id === item.id);
         <div className="col mb-4" key={item.id}>
           <ShopingCard
-            data={item[0]}
-            count={itemCount.find(itm => itm.id === item[0].id)}
-            onIncerement={() => onIncrement(itemCount.find(itm => itm.id === item[0].id))}
-            onDecrement={() => onDecrement(itemCount.find(itm => itm.id === item[0].id))}
+            data={item}
+            count
+            onIncerement={() => onIncrement(itemCount.find(itm => itm.id === item.id))}
+            onDecrement={() => onDecrement(itemCount.find(itm => itm.id === item.id))}
 
           />
         </div>
