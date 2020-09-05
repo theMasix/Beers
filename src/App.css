@@ -11,4 +11,8 @@
   margin-bottom: -4px;
   margin-right: 4px;
 }
-
+.navbar-nav span[role=button] {
+  padding: 15px;
+  display: inline-block;
+  line-height: 20px;
+}
