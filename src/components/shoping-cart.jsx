@@ -6,7 +6,7 @@ import { getLocalStorage } from './common/handleLocalStorage'
 const ShopingCart = () => {
   const [shopingItems, setShopingItems] = useState([]);
   const [itemCount, setItemCount] = useState([]);
-  let arr = [];
+  let temp = [];
   useEffect(() => {
     (async () => {
       const { data } = await getbeers();
@@ -14,16 +14,16 @@ const ShopingCart = () => {
       if (localStorageData) {
         for (let d of data) {
           if (localStorageData.includes(d.id)) {
-            arr.push(d);
+            temp.push(d);
           }
         }
-        setShopingItems(arr);
-        setItemCount(arr.map(itm => ({ id: itm.id, value: 1 })));
+        setShopingItems(temp);
+        setItemCount(temp.map(itm => ({ id: itm.id, value: 1 })));
       }
-    
+
     })();
-   
-    
+
+
   });
   const onIncrement = (item) => {
     const count = itemCount;
@@ -37,16 +37,14 @@ const ShopingCart = () => {
     count[index].value--;
     setItemCount(count);
   }
-  
   if (shopingItems.length === 0) return <p className="lead text-center">تا کنون کالایی برای خرید انتخاب نکرده ایید</p>;
   return (
     <div className="row row-cols-2 row-cols-md-4">
       {shopingItems.map(item =>
-      const count=itemCount.find(itm => itm.id === item.id);
         <div className="col mb-4" key={item.id}>
           <ShopingCard
             data={item}
-            count
+            count2={itemCount.find(itm => itm.id === item.id)}
             onIncerement={() => onIncrement(itemCount.find(itm => itm.id === item.id))}
             onDecrement={() => onDecrement(itemCount.find(itm => itm.id === item.id))}
 

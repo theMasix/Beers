@@ -10,6 +10,7 @@ class Home extends Component {
     async componentDidMount() {
         const { data: beers } = await getbeers();
         this.setState({ beers });
+       
     }
     render() {
         const { beers } = this.state;
