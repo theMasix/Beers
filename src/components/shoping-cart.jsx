@@ -44,7 +44,7 @@ const ShopingCart = () => {
         <div className="col mb-4" key={item.id}>
           <ShopingCard
             data={item}
-            count2={itemCount.find(itm => itm.id === item.id)}
+            count={itemCount.find(itm => itm.id === item.id)}
             onIncerement={() => onIncrement(itemCount.find(itm => itm.id === item.id))}
             onDecrement={() => onDecrement(itemCount.find(itm => itm.id === item.id))}
 
