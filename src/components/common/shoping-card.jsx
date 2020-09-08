@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import Card from 'react-bootstrap/Card'
 import Image from 'react-bootstrap/Image'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Button from 'react-bootstrap/Button'
 import Badge from 'react-bootstrap/Badge'
-const ShopingCard = ({ data, onIncerement, onDecrement,count }) => {
 
-    const { image_url, name, tagline } = data;
+const ShopingCard = ({ data, onIncerement, onDecrement, count, calcTotalPrice }) => {
+    const { image_url, name, tagline, srm } = data;
+
+    if (count.value === 0) return <></>;
     return (
         <Card style={{ cursor: "pointer", maxWidth: '18rem', boxShadow: "rgba(0, 0, 0, 0.05) 4px 4px 4px 4px" }} className="text-center h-100">
             <Card.Body>
@@ -25,7 +27,7 @@ const ShopingCard = ({ data, onIncerement, onDecrement,count }) => {
                         <span className="sr-only">unread messages</span>
                     </Button>
                     <Button variant="info" style={{ cursor: "default" }}>
-                        قیمت <Badge variant="light">{count.value * data.srm}</Badge>
+                        قیمت <Badge variant="light">{count.value * srm}</Badge>
                         <span className="sr-only">unread messages</span>
                     </Button>
                 </ButtonGroup>
@@ -36,3 +38,4 @@ const ShopingCard = ({ data, onIncerement, onDecrement,count }) => {
 }
 
 export default ShopingCard;
+
