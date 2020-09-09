@@ -24,7 +24,7 @@ const MyCardGroup = ({ data }) => {
       : changeList([...starList, id]);
 
   return (
-    <div className="row row-cols-2 row-cols-md-4">
+    <div className="row row-cols-2 row-cols-md-5">
       {data.map((d, index) => {
         const key = `card${index}${d.id}`;
         return (

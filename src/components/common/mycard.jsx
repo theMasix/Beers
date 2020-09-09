@@ -12,6 +12,7 @@ const Beer = ({ data, onClick, onStarClick, isStarActive }) => {
         style={{
           cursor: "pointer",
           maxWidth: "18rem",
+          maxHeight: "22rem",
           boxShadow: "rgba(0, 0, 0, 0.05) 2px 2px 2px 2px",
         }}
         className="text-center h-100"
@@ -21,7 +22,7 @@ const Beer = ({ data, onClick, onStarClick, isStarActive }) => {
         </Card.Header>
         <Card.Body onClick={onClick}>
           <Image
-            style={{ maxHeight: "18rem", maxWidth: "8rem" }}
+            style={{ maxHeight: "10rem", maxWidth: "8rem" }}
             src={image_url}
             className="img-fluid mx-auto my-2"
           />

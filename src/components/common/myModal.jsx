@@ -7,6 +7,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Image from 'react-bootstrap/Image'
 import { toast } from "react-toastify";
+import MyExpandCollapse from './MyExpandCollapse.jsx';
 const MyModal = ({ show, handleClose, data }) => {
 
   const { image_url, name, tagline, description, abv, srm } = data;
@@ -34,7 +35,7 @@ const MyModal = ({ show, handleClose, data }) => {
               <Col md={8} style={{ textAlign: "right" }}>
                 <h5>{name}</h5>
                 <h6 className="text-muted">{tagline}</h6>
-                <p>{description}</p>
+                <p><MyExpandCollapse text={description}/></p>
                 <ul style={{listStyle:"none",paddingRight:"0px"}}>
                   <li>درصد تلخی{abv}</li>
                   <li>قیمت{srm}</li>
