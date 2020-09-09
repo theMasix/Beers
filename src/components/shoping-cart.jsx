@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { getbeers } from './../serveces/movieService';
 import ShopingCard from './common/shoping-card';
+<<<<<<< HEAD
 import { getLocalStorage, setLocalStorage } from './common/handleLocalStorage'
+=======
+import { getLocalStorage } from './common/handleLocalStorage'
+>>>>>>> e3c825e9b26c14eb14294c838ec26818ec377c7e
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
@@ -11,7 +15,11 @@ const ShopingCart = () => {
   const [shopingItems, setShopingItems] = useState([]);
   const [itemCount, setItemCount] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> e3c825e9b26c14eb14294c838ec26818ec377c7e
   let temp = [];
   useEffect(() => {
     (async () => {
@@ -26,6 +34,7 @@ const ShopingCart = () => {
           }
         }
         setShopingItems(temp);
+<<<<<<< HEAD
       //   let arr = [];
       //   for (let shopItem of temp) {
       //     for (let itmCount of itemCountStorage) {
@@ -36,6 +45,8 @@ const ShopingCart = () => {
       //   }
       // console.log(arr);
 
+=======
+>>>>>>> e3c825e9b26c14eb14294c838ec26818ec377c7e
         setItemCount(temp.map(itm => ({ id: itm.id, value: 1 })));
       }
 
@@ -55,7 +66,10 @@ const ShopingCart = () => {
     const index = count.indexOf(item);
     count[index].value++;
     setItemCount(count);
+<<<<<<< HEAD
     setLocalStorage("ITEMCOUNTSTORAGE", count);
+=======
+>>>>>>> e3c825e9b26c14eb14294c838ec26818ec377c7e
   }
 
   const onDecrement = (item) => {
@@ -64,12 +78,19 @@ const ShopingCart = () => {
     count[index].value--;
     console.log("itemCount", count);
     setItemCount(count);
+<<<<<<< HEAD
     setLocalStorage("ITEMCOUNTSTORAGE", count);
+=======
+>>>>>>> e3c825e9b26c14eb14294c838ec26818ec377c7e
   }
   if (shopingItems.length === 0) return <p className="lead text-center">تا کنون کالایی برای خرید انتخاب نکرده ایید</p>;
   return (
     <>
+<<<<<<< HEAD
       <div className="row row-cols-2 row-cols-md-5">
+=======
+      <div className="row row-cols-2 row-cols-md-4">
+>>>>>>> e3c825e9b26c14eb14294c838ec26818ec377c7e
         {shopingItems.map(item =>
           <div className="col mb-4" key={item.id}>
             <ShopingCard
@@ -84,7 +105,11 @@ const ShopingCart = () => {
       </div>
       <Card body className="mb-5" style={{ boxShadow: "rgba(0, 0, 0, 0.05) 4px 4px 4px 4px" }}>
         <div className="d-flex justify-content-center">
+<<<<<<< HEAD
           <Button variant="info" className="ml-5" style={{ direction: "ltr", cursor: "default" }}>
+=======
+          <Button variant="info" className="ml-5" style={{ direction: "ltr",cursor:"default" }}>
+>>>>>>> e3c825e9b26c14eb14294c838ec26818ec377c7e
             مبلغ قابل پرداخت <Badge variant="light">{totalPrice}</Badge>
             <span className="sr-only">unread messages</span>
           </Button>

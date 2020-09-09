@@ -4,6 +4,7 @@ import Image from 'react-bootstrap/Image'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Button from 'react-bootstrap/Button'
 import Badge from 'react-bootstrap/Badge'
+<<<<<<< HEAD
 import { getLocalStorage, setLocalStorage } from './handleLocalStorage';
 const ShopingCard = ({ data, onIncerement, onDecrement, count }) => {
     const { image_url, name, tagline, srm } = data;
@@ -13,6 +14,13 @@ const ShopingCard = ({ data, onIncerement, onDecrement, count }) => {
         setLocalStorage('SHOPINGITEMS', shopingItems.filter(id => id !== data.id));
         return <></>;
     }
+=======
+
+const ShopingCard = ({ data, onIncerement, onDecrement, count, calcTotalPrice }) => {
+    const { image_url, name, tagline, srm } = data;
+
+    if (count.value === 0) return <></>;
+>>>>>>> e3c825e9b26c14eb14294c838ec26818ec377c7e
     return (
         <Card style={{ cursor: "pointer", maxHeight: "23rem", maxWidth: '15rem', boxShadow: "rgba(0, 0, 0, 0.05) 4px 4px 4px 4px" }} className="text-center h-100">
             <Card.Body>
@@ -42,3 +50,4 @@ const ShopingCard = ({ data, onIncerement, onDecrement, count }) => {
 }
 
 export default ShopingCard;
+
