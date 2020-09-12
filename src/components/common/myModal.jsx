@@ -1,5 +1,5 @@
 import React from 'react';
-import {getLocalStorage,setLocalStorage} from './handleLocalStorage'
+import { getLocalStorage, setLocalStorage } from './handleLocalStorage'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
@@ -13,11 +13,11 @@ const MyModal = ({ show, handleClose, data }) => {
   const { image_url, name, tagline, description, abv, srm } = data;
 
   const onShopingBasketButtonClick = () => {
-     let storageDataParse=getLocalStorage('SHOPINGITEMS');
+    let storageDataParse = getLocalStorage('SHOPINGITEMS');
     if (!storageDataParse.includes(data.id)) {
       storageDataParse.push(data.id);
     }
-      setLocalStorage('SHOPINGITEMS',storageDataParse);
+    setLocalStorage('SHOPINGITEMS', storageDataParse);
     toast.success(`به سبد خرید اصافه شد:${data.name}`);
     handleClose();
   }
@@ -29,25 +29,23 @@ const MyModal = ({ show, handleClose, data }) => {
         <Modal.Body>
           <Container>
             <Row>
-              <Col md={4}>
-                <Image src={image_url} fluid style={{ maxWidth: "8rem", maxHeight: "18rem" }} />
-              </Col>
-              <Col md={8} style={{ textAlign: "right" }}>
+              <Image src={image_url} fluid style={{ maxHeight: "10rem", maxWidth: "8rem" }} className="ml-3" />
+              <Col md={8} style={{ textAlign: "right" }} >
                 <h5>{name}</h5>
                 <h6 className="text-muted">{tagline}</h6>
-                <p><MyExpandCollapse text={description}/></p>
-                <ul style={{listStyle:"none",paddingRight:"0px"}}>
-                  <li>درصد تلخی{abv}</li>
-                  <li>قیمت{srm}</li>
-                </ul>
-                <Button variant="dark" size="sm" className="float-left" onClick={onShopingBasketButtonClick}>
-                  <i className="fa fa-shopping-cart" aria-hidden="true"></i>
-                     سبد خرید
-                </Button>
+                <p><MyExpandCollapse text={description} /></p>
+                <span className="font-weight-bold ml-4">{abv}درصد تلخ</span>
+                <span className="font-weight-bold">{srm}دلار</span>
               </Col>
             </Row>
           </Container>
         </Modal.Body>
+        <Modal.Footer>
+          <Button variant="dark" size="sm" className="float-left" onClick={onShopingBasketButtonClick}>
+            <i className="fa fa-shopping-cart" aria-hidden="true"></i>
+                     سبد خرید
+                </Button>
+        </Modal.Footer>
       </Modal>
     </>
   );

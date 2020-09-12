@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getbeers } from './../serveces/movieService';
+import { getbeers } from '../serveces/beerService';
 import MyCardGroup from './common/cardGroup';
 import {getLocalStorage} from './common/handleLocalStorage';
 const Favorites = () => {

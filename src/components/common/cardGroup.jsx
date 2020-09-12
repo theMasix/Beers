@@ -18,11 +18,11 @@ const MyCardGroup = ({ data }) => {
     setLocalStorage(localList, list);
   };
 
-  const handleStarClick = (id) =>
+  const handleStarClick = (id) =>{
     starList.includes(id)
       ? changeList(starList.filter((startId) => startId !== id))
       : changeList([...starList, id]);
-
+  }
   return (
     <div className="row row-cols-2 row-cols-md-5">
       {data.map((d, index) => {

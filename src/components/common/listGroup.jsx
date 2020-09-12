@@ -11,6 +11,7 @@ const ListGroup = (props) => {
                 <li
                     onClick={() => onItemSelect(item)}
                     className={item === selectedItem ? "list-group-item active" : "list-group-item"}
+                    style={{cursor:"pointer"}}
                 >
                     {item}
                 </li>

@@ -26,7 +26,7 @@ class App extends Component {
             <Redirect to={`/not-found`} />
           </Switch>
         </main>
-        {/* <Footer/> */}
+        <Footer/>
       </React.Fragment>
     );
   }
