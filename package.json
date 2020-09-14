@@ -21,7 +21,8 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "3.4.3",
     "react-toastify": "^4.5.2",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "vazir-font": "^26.0.2"
   },
   "scripts": {
     "start": "react-scripts start",

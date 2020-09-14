@@ -10,11 +10,11 @@ const ShopingCard = ({ data, onIncerement, onDecrement, count }) => {
 
     if (count.value === 0) {
         let shopingItems = getLocalStorage('SHOPINGITEMS');
-        setLocalStorage('SHOPINGITEMS', shopingItems.filter(id => id !== data.id));
+        setLocalStorage('SHOPINGITEMS', shopingItems.filter(id => id !== data.id)); 
         return <></>;
     }
     return (
-        <Card style={{ cursor: "pointer", maxHeight: "23rem", maxWidth: '15rem', boxShadow: "rgba(0, 0, 0, 0.05) 4px 4px 4px 4px" }} className="text-center h-100">
+        <Card style={{ cursor: "pointer", maxHeight: "23rem", maxWidth: '16rem', boxShadow: "rgba(0, 0, 0, 0.05) 4px 4px 4px 4px" }} className="text-center mx-auto h-100">
             <Card.Body>
                 <Image style={{ maxHeight: "10rem", maxWidth: "8rem" }} src={image_url} className="img-fluid mx-auto my-2" />
                 <Card.Title>{name}</Card.Title>
@@ -22,8 +22,8 @@ const ShopingCard = ({ data, onIncerement, onDecrement, count }) => {
                     {tagline}
                 </Card.Text>
             </Card.Body>
-            <Card.Footer>
-                <ButtonGroup aria-label="Basic example" style={{ direction: "ltr", float: "left" }}>
+            <Card.Footer className="px-1">
+                <ButtonGroup aria-label="Basic example" style={{ direction: "ltr" }}>
                     <Button variant="success" onClick={onIncerement}>+</Button>
                     <Button variant="danger" disabled={count.value === 0} onClick={onDecrement}>-</Button>
                     <Button variant="info" style={{ cursor: "default" }}>

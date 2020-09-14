@@ -52,20 +52,16 @@ class Home extends Component {
     render() {
         const { filteredBeerItems } = this.getFilteredItems();
         return (
-            <div className="row">
-                <div className="col-md-12">
-                    <ListGroup
-                        items={this.state.filterOptions}
-                        selectedItem={this.state.selectedFilterOption}
-                        onItemSelect={this.handleFilterOptionSelect}
-                    />
-                </div>
-                <div className="col-md-12">
-                    <MyCardGroup
-                        data={filteredBeerItems}
-                    />
-                </div>
-            </div>
+            <>
+                <ListGroup
+                    items={this.state.filterOptions}
+                    selectedItem={this.state.selectedFilterOption}
+                    onItemSelect={this.handleFilterOptionSelect}
+                />
+                <MyCardGroup
+                    data={filteredBeerItems}
+                />
+            </>
         );
     }
 }

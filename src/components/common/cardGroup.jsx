@@ -24,11 +24,11 @@ const MyCardGroup = ({ data }) => {
       : changeList([...starList, id]);
   }
   return (
-    <div className="row row-cols-2 row-cols-md-5">
+    <div className="row row-cols-1 row-cols-md-5">
       {data.map((d, index) => {
         const key = `card${index}${d.id}`;
         return (
-          <div className="col mb-4" key={key}>
+          <div className="col  mb-4" key={key}>
             <ShowModalCard
               data={d}
               isStarActive={starList.includes(d.id)}

@@ -16,7 +16,7 @@ class App extends Component {
       <React.Fragment>
           <ToastContainer />
         <NavBar />
-        <main className="container-fluid" style={{marginTop:"4rem"}}>
+        <main className="container-fluid" style={{marginTop:"5rem"}}>
           <Switch>
             <Route path={`/favorites`} component={Favorites}></Route>
             <Route path={`/shopingCard`} component={ShopingCart}></Route>

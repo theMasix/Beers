@@ -2,7 +2,7 @@ import React from 'react';
 const ListGroup = (props) => {
     const { items, onItemSelect, selectedItem } = props;
     return (
-        <ul className="list-group list-group-horizontal  pr-0" style={{ boxShadow: "rgba(0, 0, 0, 0.05) 2px 2px 2px 2px" }}>
+        <ul className="list-group list-group-horizontal-lg w-75 mx-auto mr-lg-0 pr-0 mb-3 mb-lg-0" style={{  boxShadow: "rgba(0, 0, 0, 0.05) 2px 2px 2px 2px"}}>
             <li class="list-group-item disabled" aria-disabled="true">
                 <i class="fa fa-list ml-2" style={{opacity:".6"}}></i>
                  مرتب سازی بر اساس:

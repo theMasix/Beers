@@ -16,10 +16,15 @@ const MyModal = ({ show, handleClose, data }) => {
     let storageDataParse = getLocalStorage('SHOPINGITEMS');
     if (!storageDataParse.includes(data.id)) {
       storageDataParse.push(data.id);
+      toast.success(`به سبد خرید اصافه شد:${data.name}`);
+    }
+    else{
+      toast.error(`در سبد خرید وجود دارد:${data.name}`);
     }
     setLocalStorage('SHOPINGITEMS', storageDataParse);
-    toast.success(`به سبد خرید اصافه شد:${data.name}`);
+  
     handleClose();
+    
   }
 
   return (

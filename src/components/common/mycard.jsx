@@ -2,20 +2,20 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
 import Star from "./star";
+import styled from 'styled-components';
 
 const Beer = ({ data, onClick, onStarClick, isStarActive }) => {
-
   const { name, tagline, image_url } = data;
   if (data)
     return (
       <Card
         style={{
           cursor: "pointer",
-          maxWidth: "18rem",
+          maxWidth: "16rem",
           maxHeight: "22rem",
           boxShadow: "rgba(0, 0, 0, 0.05) 2px 2px 2px 2px",
         }}
-        className="text-center h-100"
+        className="text-center mx-auto h-100"
       >
         <Card.Header>
           <Star onStarClick={onStarClick} isStarActive={isStarActive} />
@@ -24,7 +24,7 @@ const Beer = ({ data, onClick, onStarClick, isStarActive }) => {
           <Image
             style={{ maxHeight: "10rem", maxWidth: "8rem" }}
             src={image_url}
-            className="img-fluid mx-auto my-2"
+            className="img-fluid"
           />
           <Card.Title>{name}</Card.Title>
           <Card.Text>{tagline}</Card.Text>
