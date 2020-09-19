@@ -1,8 +1,10 @@
 import React from 'react';
 import { ButtonGroup, Badge, Card, Button } from 'react-bootstrap'
+import{ WithShadowCard} from './styledComponents';
 const PaymentCard = ({ basketItemCount, totalPrice }) => {
+   
     return (
-        <Card body className="p-0 mx-auto" style={{ boxShadow: "rgba(0, 0, 0, 0.05) 4px 4px 4px 4px" }}>
+        <WithShadowCard body className="p-0 mx-auto">
             <ul class="list-group list-group-flush p-0">
                 <li class="list-group-item d-flex justify-content-between">
                     <span >تعداد کالا ها:</span>
@@ -20,7 +22,7 @@ const PaymentCard = ({ basketItemCount, totalPrice }) => {
                 </li>
             </ul>
 
-        </Card>
+        </WithShadowCard>
 
     );
 }

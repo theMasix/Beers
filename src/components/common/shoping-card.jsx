@@ -5,6 +5,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Button from 'react-bootstrap/Button'
 import Badge from 'react-bootstrap/Badge'
 import { getLocalStorage, setLocalStorage } from './handleLocalStorage';
+import { StyledCard ,StyledImg} from './styledComponents';
 const ShopingCard = ({ data, onIncerement, onDecrement, count }) => {
     const { image_url, name, tagline, srm } = data;
 
@@ -14,9 +15,9 @@ const ShopingCard = ({ data, onIncerement, onDecrement, count }) => {
         return <></>;
     }
     return (
-        <Card style={{ cursor: "pointer", maxHeight: "23rem", maxWidth: '16rem', boxShadow: "rgba(0, 0, 0, 0.05) 4px 4px 4px 4px" }} className="text-center mx-auto h-100">
+        <StyledCard className="text-center mx-auto h-100">
             <Card.Body>
-                <Image style={{ maxHeight: "10rem", maxWidth: "8rem" }} src={image_url} className="img-fluid mx-auto my-2" />
+                <StyledImg src={image_url} className="img-fluid mx-auto my-2" />
                 <Card.Title>{name}</Card.Title>
                 <Card.Text>
                     {tagline}
@@ -35,7 +36,7 @@ const ShopingCard = ({ data, onIncerement, onDecrement, count }) => {
                 </ButtonGroup>
 
             </Card.Footer>
-        </Card >
+        </StyledCard >
     );
 }
 

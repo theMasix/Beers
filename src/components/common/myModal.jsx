@@ -1,11 +1,7 @@
 import React from 'react';
 import { getLocalStorage, setLocalStorage } from './handleLocalStorage'
-import Modal from 'react-bootstrap/Modal'
-import Button from 'react-bootstrap/Button'
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Image from 'react-bootstrap/Image'
+import{ Modal,Button,Container,Row,Col} from 'react-bootstrap'
+import {StyledImg} from './styledComponents';
 import { toast } from "react-toastify";
 import MyExpandCollapse from './MyExpandCollapse.jsx';
 const MyModal = ({ show, handleClose, data }) => {
@@ -34,7 +30,7 @@ const MyModal = ({ show, handleClose, data }) => {
         <Modal.Body>
           <Container>
             <Row>
-              <Image src={image_url} fluid style={{ maxHeight: "10rem", maxWidth: "8rem" }} className="ml-3" />
+              <StyledImg src={image_url} fluid  className="ml-3" />
               <Col md={8} style={{ textAlign: "right" }} >
                 <h5>{name}</h5>
                 <h6 className="text-muted">{tagline}</h6>
