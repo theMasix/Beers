@@ -9,8 +9,8 @@ const MyCardGroup = ({ data }) => {
   const [starList, setStarList] = useState([]);
 
   useEffect(() => {
-    const presetList = getLocalStorage(localList);  
-      setStarList(presetList); 
+    const presetList = getLocalStorage(localList);
+    setStarList(presetList);
   }, []);
 
   const changeList = (list) => {
@@ -18,11 +18,13 @@ const MyCardGroup = ({ data }) => {
     setLocalStorage(localList, list);
   };
 
-  const handleStarClick = (id) =>{
-    starList.includes(id)
-      ? changeList(starList.filter((startId) => startId !== id))
-      : changeList([...starList, id]);
+  const handleStarClick = (id) => {
+    starList.some(item => item.value === id)
+      ? changeList(starList.filter(item => item.value !== id))
+      : changeList([...starList, { value: id, expiry: new Date().getTime() + 2.628e+9 }]);
   }
+  //2.628e+9 one month
+  //59999.9342466479939 one minute
   return (
     <div className="row row-cols-1 row-cols-md-5">
       {data.map((d, index) => {
@@ -31,7 +33,7 @@ const MyCardGroup = ({ data }) => {
           <div className="col  mb-4" key={key}>
             <ShowModalCard
               data={d}
-              isStarActive={starList.includes(d.id)}
+              isStarActive={starList.some(item => item.value === d.id)}
               onStarClick={() => handleStarClick(d.id)}
             />
           </div>

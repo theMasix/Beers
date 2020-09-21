@@ -1,26 +1,27 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { getLocalStorage, setLocalStorage } from './handleLocalStorage'
-import{ Modal,Button,Container,Row,Col} from 'react-bootstrap'
-import {StyledImg} from './styledComponents';
+import { Modal, Button, Container, Row, Col } from 'react-bootstrap'
+import { StyledImg } from './styledComponents';
 import { toast } from "react-toastify";
 import MyExpandCollapse from './MyExpandCollapse.jsx';
 const MyModal = ({ show, handleClose, data }) => {
 
   const { image_url, name, tagline, description, abv, srm } = data;
+  useEffect(()=>{
 
+  },[])
   const onShopingBasketButtonClick = () => {
     let storageDataParse = getLocalStorage('SHOPINGITEMS');
-    if (!storageDataParse.includes(data.id)) {
-      storageDataParse.push(data.id);
+    if (!storageDataParse.some(item => item.value === data.id)) {
+      storageDataParse.push({value:data.id,expiry:new Date().getTime() + 604799337.20621168613});
       toast.success(`به سبد خرید اصافه شد:${data.name}`);
     }
-    else{
+    else {
       toast.error(`در سبد خرید وجود دارد:${data.name}`);
     }
     setLocalStorage('SHOPINGITEMS', storageDataParse);
-  
     handleClose();
-    
+
   }
 
   return (
@@ -30,7 +31,7 @@ const MyModal = ({ show, handleClose, data }) => {
         <Modal.Body>
           <Container>
             <Row>
-              <StyledImg src={image_url} fluid  className="ml-3" />
+              <StyledImg src={image_url} fluid className="ml-3" />
               <Col md={8} style={{ textAlign: "right" }} >
                 <h5>{name}</h5>
                 <h6 className="text-muted">{tagline}</h6>

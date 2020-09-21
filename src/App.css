@@ -5,13 +5,7 @@
   font-weight: 300;
 }
 
-.dropdown-menu.show {
-  right: 0rem;
-}
-.dropdown-toggle::after {
-  margin-bottom: -4px;
-  margin-right: 4px;
-}
+
 .navbar-nav span[role=button] {
   padding: 15px;
   display: inline-block;

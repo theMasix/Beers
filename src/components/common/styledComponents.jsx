@@ -13,8 +13,12 @@ export const StyledImg = styled(Image)`
 max-height: 10rem;
 max-width: 8rem
 `;
+export const StyledListGroup=styled.div`
+border:none;
+`;
 export default (
     WithShadowCard,
     StyledCard,
-    StyledImg
+    StyledImg,
+    StyledListGroup
 )

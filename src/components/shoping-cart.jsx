@@ -18,7 +18,7 @@ const ShopingCart = () => {
       let localStorageData = getLocalStorage('SHOPINGITEMS')
       if (localStorageData) {
         for (let d of data) {
-          if (localStorageData.includes(d.id)) {
+          if (localStorageData.some(item => item.value === d.id)) {
             shopItemsTemp.push(d);
           }
         }
@@ -42,7 +42,7 @@ const ShopingCart = () => {
     const count = [...itemCount];
     const index = count.indexOf(item);
     operation === "increment" ? count[index].value++ : count[index].value--;
-    if (count[index].value === 0) setShopingItems(shopingItems.filter(item => item.id !== count[index].id)); 
+    if (count[index].value === 0) setShopingItems(shopingItems.filter(item => item.id !== count[index].id));
     setItemCount(count);
   }
   if (shopingItems.length === 0) return <p className="lead text-center">تا کنون کالایی برای خرید انتخاب نکرده ایید</p>;
