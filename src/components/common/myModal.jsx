@@ -7,9 +7,7 @@ import MyExpandCollapse from './MyExpandCollapse.jsx';
 const MyModal = ({ show, handleClose, data }) => {
 
   const { image_url, name, tagline, description, abv, srm } = data;
-  useEffect(()=>{
-
-  },[])
+ 
   const onShopingBasketButtonClick = () => {
     let storageDataParse = getLocalStorage('SHOPINGITEMS');
     if (!storageDataParse.some(item => item.value === data.id)) {

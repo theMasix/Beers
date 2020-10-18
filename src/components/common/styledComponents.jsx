@@ -13,12 +13,26 @@ export const StyledImg = styled(Image)`
 max-height: 10rem;
 max-width: 8rem
 `;
-export const StyledListGroup=styled.div`
-border:none;
+export const DropdownToggle = styled.button`
+background-color: transparent;
+border: none;
+color: gray;
+&:focus{
+    outline: none;
+};
+&::after{
+    display:none;
+}
 `;
-export default (
-    WithShadowCard,
-    StyledCard,
-    StyledImg,
-    StyledListGroup
-)
+export const Anchor = styled.a`
+cursor: pointer;
+ text-align: right;
+`;
+export const StyledFooter = styled.div`
+position:fixed;
+bottom:0;
+width: 100%;
+display: flex;
+justify-content: center;
+background-color:#f8f9fa;
+`;

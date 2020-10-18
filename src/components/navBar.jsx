@@ -6,13 +6,12 @@ import Badge from 'react-bootstrap/Badge'
 import { getLocalStorage } from './common/handleLocalStorage'
 const NavBar = () => {
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="fixed-top px-4">
+        <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className="fixed-top">
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav>
                     <Nav.Link as={Link} className="nav-link" to="/shopingCard">
                         <i className="fa fa-shopping-cart ml-1" aria-hidden="true"></i>
-                        {/* <Badge pill variant="light" className="ml-2">{getLocalStorage("SHOPINGITEMS").length}</Badge> */}
                         سبد خرید
 
                     </Nav.Link>

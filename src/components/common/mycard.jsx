@@ -1,16 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import Card from "react-bootstrap/Card";
-import Image from "react-bootstrap/Image";
 import Star from "./star";
+import { FavsContext } from '../../contexts/favoritescontext'
 import { StyledCard, StyledImg } from './styledComponents';
 
-const Beer = ({ data, onClick, onStarClick, isStarActive }) => {
-  const { name, tagline, image_url } = data;
+const Beer = ({ data, onClick }) => {
+  const { favs, handleFavs } = useContext(FavsContext);
+  const { name, tagline, image_url, id } = data;
   if (data)
     return (
-      <StyledCard className="text-center mx-auto h-100">
+      <StyledCard className="text-center  h-100">
         <Card.Header>
-          <Star onStarClick={onStarClick} isStarActive={isStarActive} />
+          <Star onStarClick={() => handleFavs(id)} isStarActive={favs.includes(id)} />
         </Card.Header>
         <Card.Body onClick={onClick}>
           <StyledImg

@@ -6,17 +6,18 @@ import Footer from './components/footer'
 import './App.css';
 import ShopingCart from './components/shoping-cart';
 import Favorites from './components/favorites';
-import  Home from './components/home';
+import Home from './components/home';
 import 'react-toastify/dist/ReactToastify.css';
- import NotFounf from './components/not-found';
+import NotFounf from './components/not-found';
+
 
 class App extends Component {
   render() {
     return (
-      <React.Fragment>
-          <ToastContainer />
+      <>
+        <ToastContainer />
         <NavBar />
-        <main className="container-fluid" style={{marginTop:"5rem"}}>
+        <div className="main">
           <Switch>
             <Route path={`/favorites`} component={Favorites}></Route>
             <Route path={`/shopingCard`} component={ShopingCart}></Route>
@@ -25,9 +26,9 @@ class App extends Component {
             <Redirect from={`/`} exact to={`/home`} />
             <Redirect to={`/not-found`} />
           </Switch>
-        </main>
-        <Footer/>
-      </React.Fragment>
+        </div>
+        <Footer />
+      </>
     );
   }
 }

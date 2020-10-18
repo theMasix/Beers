@@ -4,14 +4,7 @@
   font-family: Vazir;
   font-weight: 300;
 }
-
-
-.navbar-nav span[role=button] {
-  padding: 15px;
-  display: inline-block;
-  line-height: 20px;
-}
-.list-group-horizontal > .list-group-item + .list-group-item.active {
-  background-color: #343a40;
-  border: none;
+.main{
+  background-color: #e8e2e2;
+  margin: 58px 0;
 }
